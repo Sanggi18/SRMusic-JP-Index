@@ -1,0 +1,147 @@
+[
+  {
+    "word": "二度目",
+    "reading": "にどめ",
+    "romaji": "nidome",
+    "source": "issue"
+  },
+  {
+    "word": "大丈夫",
+    "reading": "だいじょうぶ",
+    "romaji": "daijoubu",
+    "source": "issue"
+  },
+  {
+    "word": "寂しさ",
+    "reading": "さびしさ",
+    "romaji": "sabishisa",
+    "source": "issue"
+  },
+  {
+    "word": "思い出",
+    "reading": "おもいで",
+    "romaji": "omoide",
+    "source": "issue"
+  },
+  {
+    "word": "淋しさ",
+    "reading": "さびしさ",
+    "romaji": "sabishisa",
+    "source": "issue"
+  },
+  {
+    "word": "真夜中",
+    "reading": "まよなか",
+    "romaji": "mayonaka",
+    "source": "issue"
+  },
+  {
+    "word": "一人",
+    "reading": "ひとり",
+    "romaji": "hitori",
+    "source": "issue"
+  },
+  {
+    "word": "一度",
+    "reading": "いちど",
+    "romaji": "ichido",
+    "source": "issue"
+  },
+  {
+    "word": "三度",
+    "reading": "さんど",
+    "romaji": "sando",
+    "source": "issue"
+  },
+  {
+    "word": "二人",
+    "reading": "ふたり",
+    "romaji": "futari",
+    "source": "issue"
+  },
+  {
+    "word": "二度",
+    "reading": "にど",
+    "romaji": "nido",
+    "source": "issue"
+  },
+  {
+    "word": "今日",
+    "reading": "きょう",
+    "romaji": "kyou",
+    "source": "issue"
+  },
+  {
+    "word": "大人",
+    "reading": "おとな",
+    "romaji": "otona",
+    "source": "issue"
+  },
+  {
+    "word": "彼女",
+    "reading": "かのじょ",
+    "romaji": "kanojo",
+    "source": "common"
+  },
+  {
+    "word": "明日",
+    "reading": "あす",
+    "romaji": "asu",
+    "source": "issue",
+    "variants": [
+      {
+        "reading": "あした",
+        "romaji": "ashita"
+      }
+    ],
+    "note": "あす is the formal/lyric reading; あした is the common spoken reading"
+  },
+  {
+    "word": "昨夜",
+    "reading": "ゆうべ",
+    "romaji": "yuube",
+    "source": "issue"
+  },
+  {
+    "word": "昨日",
+    "reading": "きのう",
+    "romaji": "kinou",
+    "source": "issue"
+  },
+  {
+    "word": "本当",
+    "reading": "ほんとう",
+    "romaji": "hontou",
+    "source": "issue"
+  },
+  {
+    "word": "言葉",
+    "reading": "ことば",
+    "romaji": "kotoba",
+    "source": "issue"
+  },
+  {
+    "word": "貴方",
+    "reading": "あなた",
+    "romaji": "anata",
+    "source": "issue"
+  },
+  {
+    "word": "今",
+    "reading": "いま",
+    "romaji": "ima",
+    "source": "common"
+  },
+  {
+    "word": "何",
+    "reading": "なに",
+    "romaji": "nani",
+    "source": "common"
+  },
+  {
+    "word": "彼",
+    "reading": "かれ",
+    "romaji": "kare",
+    "source": "common"
+  }
+]
