@@ -9,8 +9,10 @@ bundling a dictionary in the APK.
 | File | Size | Contents |
 |---|---|---|
 | `kanji.json` | ~402 KB | 2136 Joyo kanji (grade 1–8), sorted by grade then stroke count |
+| `hyogai.json` | ~168 KB | 869 non-Joyo kanji (grade 9–10 + curated lyric hyogai), see below |
 | `lyric_overrides.json` | ~2.6 KB | 23 lyric/jukujikun pre-reading overrides |
 | `build_index.py` | — | Reproducible build script (KANJIDIC2 → `kanji.json`) |
+| `build_hyogai.py` | — | Reproducible build script (KANJIDIC2 → `hyogai.json`) |
 | `kanjidic2.xml.gz` | ~1.5 MB | Source data, kept for reproducibility |
 
 ## `kanji.json` — entry format
@@ -29,10 +31,40 @@ bundling a dictionary in the APK.
   `toukyou`. Digraphs (`しゃ` → `sha`), sokuon doubles the next consonant
   (`がっこう` → `gakkou`), `ん` → `n`.
 - `grade`: KANJIDIC2 grade. 1–6 = kyouiku (1026 kanji), 8 = remaining Joyo
-  (1110 kanji). Total 2136. Grades 9–10 (jinmeiyo / variants, 863 kanji)
-  are excluded.
+  (1110 kanji). Total 2136. Grades 9–10 (jinmeiyo / variants) live in
+  `hyogai.json`, not here.
 - `meanings`: English meanings only (entries without a language attribute
   in KANJIDIC2).
+
+## `hyogai.json` — entry format
+
+Same format as `kanji.json`, plus `"hyogai": true` on every entry:
+
+```json
+{"kanji": "淋", "on": ["リン"], "kun": ["さび.しい", "さみ.しい"],
+ "on_romaji": ["rin"], "kun_romaji": ["sabishii", "samishii"],
+ "grade": 9, "strokes": 11, "meanings": ["lonely", "deserted"], "hyogai": true}
+```
+
+869 entries, ordered grade 9 → grade 10 → ungraded (by strokes within
+each group):
+
+- **Grade 9 (651)** — all jinmeiyo (name kanji) from KANJIDIC2. Many
+  show up in lyrics and artist names (淋, 噂, 凛, 凪, 霞, 雫, 耀 …).
+- **Grade 10 (208)** — all variant kanji with readings. (KANJIDIC2 lists
+  212 grade-10 kanji; 4 have no readings at all — 歷, 欄, 廊, 類 — and are
+  excluded rather than invented.)
+- **Ungraded, curated (10)** — hyogai with no KANJIDIC2 grade that are
+  common in J-pop lyrics: 嘘, 呟, 囁, 頬, 贖, 掴, 揉, 捏, 洒, 乖.
+  Note: most of the curated candidates turned out to already be Joyo
+  (唄, 匂, 刹, 唇, 涙, 嵐 …) or grade 9 (淋, 噂, 凛 …), so they are not
+  duplicated here — `hyogai.json` has zero overlap with `kanji.json`.
+
+Why split from `kanji.json`: size and frequency. The Joyo file covers
+~99% of lyric text and stays small (~402 KB); the hyogai file is an
+optional second fetch (~168 KB) for the long tail. The app should try
+`kanji.json` first, then `hyogai.json`, then fall back to the online
+romanisation request.
 
 ## `lyric_overrides.json` — entry format
 
@@ -56,6 +88,7 @@ branch `main`), the app fetches the raw files — no API key, no auth:
 
 ```
 https://raw.githubusercontent.com/Sanggi18/srmusic-kanji-index/main/kanji.json
+https://raw.githubusercontent.com/Sanggi18/srmusic-kanji-index/main/hyogai.json
 https://raw.githubusercontent.com/Sanggi18/srmusic-kanji-index/main/lyric_overrides.json
 ```
 
@@ -72,12 +105,14 @@ first). Verify the romaji with the converter in `build_index.py`
 ## Rebuilding
 
 ```sh
-python3 build_index.py
+python3 build_index.py    # kanji.json + lyric_overrides.json
+python3 build_hyogai.py   # hyogai.json (reuses the romaji converter from build_index.py)
 ```
 
 Requires `kanjidic2.xml.gz` in this directory (download from
-https://www.edrdg.org/kanjidic/kanjidic2.xml.gz). The script asserts the
-romaji test cases, the 2136 count, no duplicate kanji, and valid JSON.
+https://www.edrdg.org/kanjidic/kanjidic2.xml.gz). The scripts assert the
+romaji test cases, the 2136 / 869 counts, no duplicate kanji, zero overlap
+between `kanji.json` and `hyogai.json`, and valid JSON.
 
 ## Limitations (honest)
 
@@ -88,8 +123,11 @@ romaji test cases, the 2136 count, no duplicate kanji, and valid JSON.
   wrong (e.g. rare name readings).
 - Some KANJIDIC2 readings are rare/archaic (e.g. `お-`, `-び` bound forms);
   they are kept verbatim for completeness.
-- KANJIDIC2 does not cover readings outside the Joyo set (grade 9–10
-  jinmeiyo kanji are not in `kanji.json`).
+- KANJIDIC2 does not cover readings outside its own entries: kanji
+  absent from both `kanji.json` and `hyogai.json` (very rare / archaic /
+  non-KANJIDIC2 kanji) still need the online romanisation fallback.
+  The 4 grade-10 kanji without any reading in KANJIDIC2 (歷, 欄, 廊, 類)
+  are excluded from `hyogai.json`.
 
 ## License / attribution
 
