@@ -143,5 +143,119 @@
     "reading": "かれ",
     "romaji": "kare",
     "source": "common"
+  },
+  {
+    "word": "相変らず",
+    "reading": "あいかわらず",
+    "romaji": "aikawarazu",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "相変わらず",
+    "reading": "あいかわらず",
+    "romaji": "aikawarazu",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "見覚え",
+    "reading": "みおぼえ",
+    "romaji": "mioboe",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "言ってた",
+    "reading": "いってた",
+    "romaji": "itteta",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "言われた",
+    "reading": "いわれた",
+    "romaji": "iwareta",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "言いながら",
+    "reading": "いいながら",
+    "romaji": "iinagara",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "帰らないで",
+    "reading": "かえらないで",
+    "romaji": "kaeranaide",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "振り返れば",
+    "reading": "ふりかえれば",
+    "romaji": "furikaereba",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "振り返る",
+    "reading": "ふりかえる",
+    "romaji": "furikaeru",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "抱いて",
+    "reading": "だいて",
+    "romaji": "daite",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "忘れず",
+    "reading": "わすれず",
+    "romaji": "wasurezu",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "暖めてた",
+    "reading": "あたためてた",
+    "romaji": "atatameteta",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "置いた",
+    "reading": "おいた",
+    "romaji": "oita",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "繰り返していた",
+    "reading": "くりかえしていた",
+    "romaji": "kurikaeshiteita",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "繰り返す",
+    "reading": "くりかえす",
+    "romaji": "kurikaesu",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "大事",
+    "reading": "だいじ",
+    "romaji": "daiji",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "離れていった",
+    "reading": "はなれていった",
+    "romaji": "hanareteitta",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "感じていた",
+    "reading": "かんじていた",
+    "romaji": "kanjiteita",
+    "source": "stay-with-me"
+  },
+  {
+    "word": "来て",
+    "reading": "きて",
+    "romaji": "kite",
+    "source": "stay-with-me"
   }
 ]
