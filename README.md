@@ -10,7 +10,7 @@ bundling a dictionary in the APK.
 |---|---|---|
 | `kanji.json` | ~402 KB | 2136 Joyo kanji (grade 1–8), sorted by grade then stroke count |
 | `hyogai.json` | ~168 KB | 869 non-Joyo kanji (grade 9–10 + curated lyric hyogai), see below |
-| `lyric_overrides.json` | ~5.0 KB | 42 lyric/jukujikun pre-reading overrides |
+| `lyric_overrides.json` | ~5.2 KB | 43 lyric/jukujikun pre-reading overrides |
 | `build_index.py` | — | Reproducible build script (KANJIDIC2 → `kanji.json`) |
 | `build_hyogai.py` | — | Reproducible build script (KANJIDIC2 → `hyogai.json`) |
 | `kanjidic2.xml.gz` | ~1.5 MB | Source data, kept for reproducibility |
